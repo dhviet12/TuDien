@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+<input type="text" id="search">
+<input type="button" id="dich" value="Translate" onclick="dich()">
+
+
+
+<script>
+    function dich() {
+
+        let word = document.getElementById('search').value;
+        let english = ['car', 'name', 'mobile', 'police'];
+        let vietnamese = ['Ô tô', 'Tên', 'Điện thoại', 'Cảnh sát'];
+        let index = findByValue(word, english);
+        if (index != -1){
+            alert(vietnamese[index])
+        }else {
+            alert('Khong tim thay tu ban muon dich');
+        }
+
+    }
+
+    function findByValue(value, arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (value === arr[i]) {
+                return i;
+            }
+        }
+        return -1;
+
+    }
+</script>
+
+
+</body>
+</html>
